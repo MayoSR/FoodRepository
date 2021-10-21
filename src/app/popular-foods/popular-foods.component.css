@@ -1,0 +1,71 @@
+:host{
+    width:100%;
+}
+
+.profile-data{
+    padding:10px 20px 10px 20px;
+    width:100%;
+}
+
+.details{
+    display: flex;
+    flex-direction: row;
+    font-size:16px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.details p{
+    margin:0px;
+}
+
+.edit-email{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
+.editable{
+    pointer-events: none;
+    background:white !important;
+}
+
+h4{
+    color:orange;
+}
+
+#email{
+    width:180px;
+}
+
+.details input{
+    border-radius: 0px;
+    font-size:15px;
+    outline:none !important;
+    border:none;
+    background:whitesmoke;
+    height:25px;
+}
+
+
+#name{
+    width:120px;
+}
+
+
+#edit-btn{
+    border-radius: 0px;
+    padding:4px;
+    height:30px;
+    width:30px;
+    font-size:14px;
+    color:#737373;
+    border:none;
+    border:1px solid rgba(0,0,0,0.2);
+}
+
+.btn:focus,.btn:active,.form-control {
+    outline: none !important;
+    border:1px solid rgba(0,0,0,0.2);
+    box-shadow: none;
+}

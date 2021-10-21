@@ -1,0 +1,21 @@
+<div class="full-container" @fadeIn *ngIf="this.modalToggle.modalStatus">
+    <div class="modal-box" @fadeIn >
+        <div class="modal-box-header">
+            <h3>Filter</h3>
+            <i class="fa fa-close" (click)="this.modalToggle.toggleModal()"></i>
+        </div>
+        <div class="modal-box-body">
+            <h5>Max price</h5>
+            <input #maxAmt class="form-control" placeholder="Enter max amount">
+        </div>
+        <div class="modal-box-body">
+            <h5>Vegetarian / Non - Vegetarian</h5>
+            <select #selFoodType class="form-control">
+                <option value="Any">Any</option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Non-Vegetarian">Non Vegetarian</option>
+            </select>
+        </div>
+        <button class="btn btn-default" (click)="setFilters()">Apply</button>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="navbar">
+    <div class="nav-item" [ngClass]="this.status=='menu' ? 'selected-nav' : ''" >
+        <i class="nav-glyph fa fa-cutlery" (click)="redirect('','menu')"></i>
+        <span>Menu</span>
+    </div>
+    <div class="nav-item"  [ngClass]="this.status=='cart' ? 'selected-nav' : ''" >
+        <div class="count-glyph"  (click)="redirect('checkout','cart')">
+            <p class="item-qty" [ngClass]="itemTot() == 0 ? 'hidden' : 'show-block'" [textContent]="itemTot()"></p>
+            <i class="nav-glyph fa fa-shopping-bag"></i>
+        </div>
+        <span>Cart</span>
+    </div>
+    <div class="nav-item" [ngClass]="this.status=='orders' ? 'selected-nav' : ''" >
+        <i class="nav-glyph fa fa-list" (click)="redirect('orders','orders')"></i>
+        <span>Orders</span>
+    </div>
+</div>

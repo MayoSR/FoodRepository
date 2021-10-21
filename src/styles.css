@@ -1,0 +1,58 @@
+.nopadding{
+    margin:0px !important;
+    padding:0px !important;
+}
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+body,button,input{
+    font-family: 'Oswald', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;  
+}
+::-webkit-scrollbar-thumb {
+    background:transparent;
+}
+
+
+.hidden{
+    display: none;
+}
+
+.show-block{
+    display: block;
+}
+
+.show-flex{
+    display: flex;
+}
+
+.spacer-div{
+    height:60px;
+}
+
+button, .cursor-pointer{
+    cursor: pointer;
+}
+
+.btn-default{
+    color:white;
+    background: orange;
+    border:none;
+    box-shadow: none;
+}
+
+.btn-default i{
+    color:white;
+}
+
+.btn-default:hover, .btn-default:active, .btn-default:focus {
+  color: #ffffff !important;
+  background-color: orange !important;
+}

@@ -1,0 +1,48 @@
+<div class="container-fluid nopadding">
+    <div id="filter-box">
+        <h4 id="filter-h4">Filter Food</h4>
+        <div @fadeIn id="search-foods">
+            <button class="btn btn-default"><i class="fa fa-search"></i></button>
+            <input class="form-control" [(ngModel)]="searchText" (ngModelChange)="search()" placeholder="Search for food">
+            <button class="btn btn-default"  (click)="this.modalToggle.toggleModal()"><i class="material-icons">filter_list</i></button>
+        </div>
+    </div>
+    <app-modals></app-modals>
+    <div class="menu-box">
+        <h4>Today's Menu</h4>
+        <ng-container *ngFor="let item of this.menuItemArray.menuArray">
+            <ng-container *ngIf="filterFoods(item.foodItem)">
+                <div class="menu-item" @fadeIn>
+                    <div class="middle-menu">
+                        <div [ngClass]="item.isAdded ? 'set-qty show-flex' : 'set-qty hidden'" >
+                            <button class="btn btn-success left-btn"  (click)="item.decCountOfItems()"><i class="fa fa-minus"></i></button>
+                            <input [readonly]="true" type="text" [value]='item.returnCountOfItem()'>
+                            <button class="btn btn-success right-btn"  (click)="item.incCountOfItems()"><i class="fa fa-plus"></i></button>
+                        </div>
+                        <div [ngClass]="item.isAdded ? 'add-food hidden' : 'add-food show-block'" >
+                            <button class="btn btn-default" (click)="item.incCountOfItems()">Add&nbsp;<i class="fa fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="left-menu">
+                        <div class="food-data">
+                            <p class="food-name" >{{item.foodItem.name | titlecase}}</p>
+                            <div class="food-attr">
+                                <p class="food-price" ><i class="fa fa-inr"></i>{{item.foodItem.price}}</p>
+                                <p class="spacer-dot"><i class="fa fa-circle"></i></p>
+                                <p class="food-rating" ><i class="fa fa-star"></i>{{item.foodItem.rating}}</p>
+                            </div>
+                            <div class="lower-left-menu">
+                                <div [ngClass]="item.foodItem.type === 'Vegetarian' ? 'veg food-type-logo' : 'non-veg food-type-logo' " ><i class="fa fa-circle"></i></div><p class="food-type">{{item.foodItem.type | titlecase}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-menu">
+                        <img class="img-responsive" src={{item.foodItem.imgPath}}>
+                    </div>
+                </div>
+            </ng-container>
+        </ng-container>
+    </div>    
+
+    <div class="spacer-div"></div>
+</div>

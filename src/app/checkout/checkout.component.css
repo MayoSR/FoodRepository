@@ -1,0 +1,285 @@
+.checkout-item{
+    margin-bottom:15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+    color:rgba(0,0,0,0.6);
+}
+
+.checkout-item:first-child{
+    margin-top:20px;
+}
+
+.checkout-item:last-child{
+    margin-bottom:20px;
+}
+
+
+.checkout-item p{
+    margin:0px;
+}
+.item-details{
+    flex:5;
+    display: flex;
+    flex-direction: row;
+}
+
+.item-qty{
+    flex:3;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.item-price{
+    text-align:right;
+    flex:2;
+}
+
+.total-bill{
+    margin:20px 0px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    justify-content: space-between;
+    color:#737373;
+}
+
+.bill-tot-txt{
+    flex:5;
+}
+
+.bill-qty{
+    flex:3;
+    text-align: center;
+}
+
+.bill-amt{
+    flex:2;
+    text-align:right;
+}
+
+.page-boundary{
+    margin:20px;
+    border:1px solid rgba(0,0,0,0.3);
+}
+
+h4{
+    padding:20px;
+    padding-bottom:0px;
+    color:orange;
+}
+
+.empty-logo h4{
+    color:rgba(0,0,0,0.6);
+}
+
+h4:nth-of-type(2){
+    margin-top:40px;
+    padding-top:40px;
+    border-top:1px solid rgba(0,0,0,0.1);
+}
+
+.food-type-logo{
+    font-size:7px;
+    height:12px;
+    width:12px;
+    margin-right:8px;
+    margin-top:2px;
+}
+
+.food-type-logo i{
+    margin-left:2px;
+}
+
+.veg{
+    color:#009933;
+    border:1px solid #009933;
+}
+
+.non-veg{
+    color:#993333;
+    border:1px solid #993333;
+}
+
+.food-type{
+    font-size:11px;
+}
+
+#empty-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:80vh;
+    color: rgba(0,0,0,0.3);
+}
+
+.empty-logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-logo i{
+    font-size:128px;
+}
+
+.empty-logo h4{
+    margin-top:40px;
+}
+
+
+.set-qty{
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.set-qty button{
+    height:20px;
+    width:20px;
+    border-radius:0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline:none;
+    border:none;
+    background:white;
+}
+
+.set-qty button:first-child{
+    border-top:1px solid rgb(0, 153, 51);
+    border-left:1px solid rgb(0, 153, 51);
+    border-bottom:1px solid rgb(0, 153, 51);
+}
+
+.set-qty button:last-child{
+    border-top:1px solid rgb(0, 153, 51);
+    border-right:1px solid rgb(0, 153, 51);
+    border-bottom:1px solid rgb(0, 153, 51);
+}
+
+
+.set-qty button i{
+    font-size:10px;
+    margin-top:-2px;
+    color:rgb(0, 153, 51);
+    background:white;
+}
+
+.set-qty input{
+    border-radius:0px;
+    width:20px;
+    height:20px;
+    text-align: center;
+    padding:0px;
+    font-size:12px;
+    border:none;
+    border-top:1px solid rgb(0, 153, 51);
+    border-bottom:1px solid rgb(0, 153, 51);
+    color:rgb(0, 153, 51);
+}
+
+#tot-amt{
+    padding:15px 0px 5px 0px;
+    border-top:1px solid rgba(0,0,0,0.1);
+    border-bottom:1px solid rgba(0,0,0,0.1);
+    margin-top:10px;
+    margin-bottom:20px;
+}
+
+#confirm-btn{
+    margin-bottom:20px;
+    float:right;
+    color:white;
+    background: orange;
+    border:none;
+}
+
+.suggestions{
+    padding:20px;
+    padding-bottom:5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.food-item{
+    flex:0 48%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border:1px solid black;
+    margin-bottom:20px;
+}
+
+.left-menu{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.right-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.right-menu{
+    padding:10px;
+    padding-bottom:0px;
+    font-size:12px;
+    color:rgb(192,192,192);
+}
+
+.right-menu p{
+    text-align: center;
+}
+
+.food-item img{
+    height:80px;
+    width:100%;
+    border:1px solid rgba(0,0,0,0.1);
+}
+
+.add-food{
+    width:100%;
+    border-radius:0px;
+    font-size:11px;
+    border-top:0px;
+    border:none;
+}
+
+.add-food i{
+    font-size:9px;
+}
+
+
+.food-attr i{
+    margin-right:2px;
+}
+
+.spacer-dot{
+    font-size:3px;
+    padding:0px;
+    padding-top:5px;
+    margin:0px 8px 0px 9px;
+}
+
+.side-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.fa-shopping-basket{
+    color:orange;
+}
+
+.set-qty input:disabled,.set-qty input[disabled]{
+    background: white !important;
+}

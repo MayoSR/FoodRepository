@@ -1,0 +1,45 @@
+
+<div class="container-fluid nopadding">
+    <div @fadeIn *ngIf="this.menuItemArray.itemTot() == 0 ; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+        <div id="empty-page" class="container-fluid">
+            <div class="empty-logo">
+                <i class="fa fa-shopping-basket"></i>
+                <h4>You have no pending orders</h4>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template #elseBlock>
+        <h4>Checkout</h4>
+        <div class="page-boundary container-fluid">
+            <div class="total-bill">
+                <p class="bill-tot-txt">Name</p>
+                <p class="bill-qty">Qty</p>
+                <p class="bill-amt">Price</p>
+            </div>
+            <div @fadeIn *ngFor="let item of this.menuItemArray.menuArray">
+                <div class="checkout-item" *ngIf="item.countOfItems != 0">
+                    <div class="item-details">
+                        <div class="item-type">
+                            <div [ngClass]="item.foodItem.type == 'Vegetarian' ? 'veg food-type-logo' : 'non-veg food-type-logo'" ><i class="fa fa-circle"></i></div>
+                        </div>
+                        <p class="item-name">{{item.foodItem.name | titlecase}}</p>
+                    </div>
+                    <div class="item-qty set-qty" >
+                        <button class="btn btn-success"  (click)="item.decCountOfItems()"><i class="fa fa-minus"></i></button>
+                        <input class="qty-input form-control"  type="text" [value]='item.countOfItems'  [readonly]="true">
+                        <button class="btn btn-success"  (click)="item.incCountOfItems()"><i class="fa fa-plus"></i></button>
+                    </div>
+                    <p class="item-price"><i class="fa fa-rupee"></i>&nbsp;<span class="span-item-price">{{item.foodItem.price}}</span></p>
+                </div>
+            </div>
+            <div class="total-bill" id="tot-amt">
+                <p class="bill-tot-txt">Total</p>
+                <p class="bill-qty" [innerHTML]="this.menuItemArray.itemTot()"></p>
+                <p class="bill-amt fa" [innerHTML]="this.menuItemArray.billTot()"></p>
+            </div>
+            <button id="confirm-btn" class="btn btn-default" (click)="createOrder(this.menuItemArray.menuArray)" (click)="placeOrder()">Place Order</button>
+        </div>
+    </ng-template>
+    <div class="spacer-div"></div>
+</div>

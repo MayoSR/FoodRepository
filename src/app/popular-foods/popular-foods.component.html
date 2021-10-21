@@ -1,0 +1,10 @@
+<div class="profile-data">
+    <div class="details">
+        <input [ngClass]="this.toggle ? 'editable form-control' : 'form-control'" spellcheck="false" value="John Doe"
+            id="name">
+        <input [ngClass]="this.toggle ? 'editable form-control' : 'form-control'" spellcheck="false" id="email"
+            value="xyzabc@gmail.com">
+        <button (click)="allowEdit()" id="edit-btn" class="btn btn-default"><i
+                [ngClass]="this.toggle ? 'fa fa-edit' : 'fa fa-check'"></i></button>
+    </div>
+</div>

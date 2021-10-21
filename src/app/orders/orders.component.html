@@ -1,0 +1,57 @@
+<div class="container-fluid nopadding">
+    <ng-container *ngIf="this.orderItemArray.countOfOrders(); else elseTemplate">
+        <h4 id="order-h4">Your Orders</h4>
+        <div class="order-container" @fadeIn *ngFor="let order of this.returnOrders()">
+            <div class="confirmed-order">
+                <div  *ngIf="order.orderStatus == 'Completed'" class="border-tick">
+                    <i id="done"  class="material-icons">done</i>
+                </div>
+                <i *ngIf="order.orderStatus == 'Waiting'" id="waiting" class="material-icons">fastfood</i>
+                <i *ngIf="order.orderStatus == 'In Progress'" id="clock"  class="material-icons">query_builder</i>
+            </div>
+            <h3 *ngIf="order.orderStatus == 'In Progress'" class="order-st">Your order is in progress!</h3>
+            <h3 *ngIf="order.orderStatus == 'Waiting'" class="order-st">Please pick up your order!</h3>
+            <h3 *ngIf="order.orderStatus == 'Completed'" class="order-st">Your order has been completed.</h3>
+            <h5>Order Details</h5>
+            <div class="order-details">
+                <div class="left-tab">
+                    <p>Order ID </p>
+                    <p>Order Code</p>
+                    <p>Amount</p>
+                </div>
+                <div class="right-tab">
+                    <p>{{order.orderNo}}</p>
+                    <p>{{order.orderCode}}</p>
+                    <p><i class="fa fa-inr"></i>&nbsp;{{order.totOrderAmt}}</p>
+                </div>
+            </div>
+            <h5>Items</h5>
+            <div class="orders-list">
+                <div class="order" *ngFor="let item of order.order">
+                    <div class="order-items" *ngIf="item.returnCountOfItem() > 0">
+                        <p>{{item.foodItem.name}}</p>
+                        <i class="fa fa-close"></i>
+                        <p>{{item.returnCountOfItem()}}</p>
+                    </div>
+                </div>
+            </div>
+            <h5>Rating</h5>
+            <div class="orders-rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+        </div>
+    </ng-container>
+    <ng-template #elseTemplate>
+        <div class="empty-orders">
+            <i class="fa fa-credit-card" aria-hidden="true"></i>
+            <h4>Why don't you order some food?</h4>
+        </div>
+    </ng-template>
+    <div class="spacer-div"></div>
+</div>
+
+
